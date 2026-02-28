@@ -1,3 +1,4 @@
 /dataset
 __MACOSX
 .vscode
+__pycache__

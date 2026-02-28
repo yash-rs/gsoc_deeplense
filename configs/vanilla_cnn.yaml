@@ -1,6 +1,11 @@
+experiment:
+  run_name: "vanilla_cnn"
+  output_dir: "./outputs"
+  seed: 42
+
 data:
   root_dir: "./dataset"
-  batch_size: 64
+  batch_size: 32
   num_workers: 4
 
 model:
@@ -9,17 +14,19 @@ model:
 
 training:
   epochs: 20
-
-optimizer:
-  name: "adam"        # options: "adam", "lbfgs"
   learning_rate: 0.001
   weight_decay: 0.0001
 
-  # LBFGS specific parameters
-  lbfgs:
-    max_iter: 20
-    history_size: 10
-    line_search_fn: "strong_wolfe"
+# optimizer:
+#   name: "adam"        # options: "adam", "lbfgs"
+#   learning_rate: 0.001
+#   weight_decay: 0.0001
+
+#   # LBFGS specific parameters
+#   lbfgs:
+#     max_iter: 20
+#     history_size: 10
+#     line_search_fn: "strong_wolfe"
 
 device:
   use_cuda: true
