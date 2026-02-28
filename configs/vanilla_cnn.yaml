@@ -1,0 +1,28 @@
+data:
+  root_dir: "./dataset"
+  batch_size: 64
+  num_workers: 4
+
+model:
+  num_classes: 3
+  in_channels: 1
+
+training:
+  epochs: 20
+
+optimizer:
+  name: "adam"        # options: "adam", "lbfgs"
+  learning_rate: 0.001
+  weight_decay: 0.0001
+
+  # LBFGS specific parameters
+  lbfgs:
+    max_iter: 20
+    history_size: 10
+    line_search_fn: "strong_wolfe"
+
+device:
+  use_cuda: true
+
+logging:
+  save_path: "./checkpoints"
